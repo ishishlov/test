@@ -1,0 +1,66 @@
+body {
+	background: #f0eef0;
+}
+
+.main-container {
+	width: 1000px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.container {
+	border-radius: 10px;
+	margin: 15px;
+	background: #fff;
+}
+
+.main-title {
+	min-height: 50px;
+}
+
+.content {
+	min-height: 500px;
+}
+
+.main-title-text {
+	text-align: center;
+	padding-top: 5px;
+}
+
+.hide {
+	display: none;
+}
+
+.phonebook-cell__title {
+	font-weight: bold;
+}
+
+.phonebook-table {
+	padding: 10px;
+	width: 98%;
+	height: 480px;
+	overflow-y: scroll;
+}
+
+.phonebook-row {
+	margin: 10px 0;
+	border-bottom: 1px dashed #000;
+}
+
+.phonebook-cell {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.phonebook-cell-edit {
+	outline: none;
+	border-width: 0;
+}
+
+.cell-phone {
+	width: 25%;
+}
+
+.cell-fio {
+	width: 50%;
+}

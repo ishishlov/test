@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="utf-8"/>
+		<title>Phonebook</title>
+		<link rel="stylesheet" href="css/index.css?230320180924" type="text/css"/>
+	</head>
+	<body>
+		<div class="main-container">
+			<div class="container main-title">
+				<h1 class="main-title-text">Моя телефонная книга</h1>
+			</div>
+			<div class="container content">
+				<div class="phonebook-table">
+					<div class="phonebook-row">
+						<div class="phonebook-cell phonebook-cell__title cell-phone ">Номер</div>
+						<div class="phonebook-cell phonebook-cell__title cell-fio">ФИО</div>
+						<div class="phonebook-cell phonebook-cell__title">Действия</div>
+					</div>
+					<div class="phonebook-row">
+						<input class="phonebook-cell phonebook-cell-edit cell-phone cell-phone-edit" type="text" placeholder="Введите телефон" maxlength="12">
+						<input class="phonebook-cell phonebook-cell-edit cell-fio cell-fio-edit" type="text" placeholder="Введите ФИО" maxlength="80">
+						<input class="phonebook-cell cell-add" data-edit="0" type="button" value="Добавить">
+					</div>
+					<div class="phonebook-rows"></div>
+				</div>
+			</div>
+		</div>
+		<script src="js/jquery-3.1.1.min.js"></script>
+		<script src="js/index.js"></script>
+	</body>
+</html>
