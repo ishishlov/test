@@ -17,18 +17,22 @@
 						<div class="phonebook-cell phonebook-cell__title cell-fio">ФИО</div>
 						<div class="phonebook-cell phonebook-cell__title">Действия</div>
 					</div>
-					<div class="phonebook-row">
+					<div class="phonebook-row" v-show="showAddForm">
 						<input class="phonebook-cell phonebook-cell-edit cell-phone cell-phone-edit" v-model="phone" type="text" placeholder="Введите телефон" maxlength="12">
 						<input class="phonebook-cell phonebook-cell-edit cell-fio cell-fio-edit" v-model="fio" type="text" placeholder="Введите ФИО" maxlength="80">
 						<input class="phonebook-cell cell-add" @click="addPhoneBookVue" type="button" value="Добавить">
-						
 					</div>
-					<div class="phonebook-rows">
+					<div class="phonebook-row" v-show="showEditForm">
+						<input class="phonebook-cell phonebook-cell-edit cell-phone cell-phone-edit" v-model="editPhone" type="text" placeholder="Введите телефон" maxlength="12">
+						<input class="phonebook-cell phonebook-cell-edit cell-fio cell-fio-edit" v-model="editFio" type="text" placeholder="Введите ФИО" maxlength="80">
+						<input class="phonebook-cell cell-add" @click="editPhoneBookVue" type="button" value="Редактировать">
+					</div>
+					<div class="phonebook-rows" v-show="showAddForm">
 						<div class="phonebook-row" v-for="(phoneBook, n) in phoneBookVue">
 							<div class="phonebook-cell cell-phone">{{phoneBook.phone}}</div>
 							<div class="phonebook-cell cell-fio">{{phoneBook.fio}}</div>
 							<div class="phonebook-cell buttons-block">
-								<input class="phonebook-cell cell-edit" type="button" value="Редактировать">
+								<input class="phonebook-cell cell-edit" @click="editForm(n)" type="button" value="Редактировать">
 								<input class="phonebook-cell cell-delete" @click="removePhoneBookVue(n)" type="button" value="Удалить">
 							</div>
 						</div>

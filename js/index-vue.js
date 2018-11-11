@@ -1,6 +1,11 @@
 const app = new Vue({
 	el:'#app',
 	data: {
+		showAddForm: true,
+		showEditForm: false,
+		editPhone: '',
+		editFio: '',
+		editId: '',
 		phoneBookVue: {
 
 		},
@@ -31,6 +36,26 @@ const app = new Vue({
 		},
 		removePhoneBookVue(x) {
 			delete this.phoneBookVue[x];
+			this.savePhoneBookVue();
+		},
+		editForm (y) {
+			this.editPhone = this.phoneBookVue[y].phone;
+			this.editFio = this.phoneBookVue[y].fio;
+			this.editId = y;
+			this.showAddForm = false;
+			this.showEditForm = true;
+		},
+		editPhoneBookVue() {
+			if (this.editPhone && this.editFio) {
+				this.phoneBookVue[this.editId] = {
+					fio: this.editFio,
+					phone: this.editPhone
+				};
+			}
+			this.editPhone = '';
+			this.editFio = '';
+			this.showAddForm = true;
+			this.showEditForm = false;
 			this.savePhoneBookVue();
 		},
 		savePhoneBookVue() {
